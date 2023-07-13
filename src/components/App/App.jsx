@@ -86,7 +86,7 @@ export const App = () => {
       <Searchbar getImagesQuery={changeQuery}></Searchbar>
       {status !== STATUS.idle && (
         <>
-          <ImageGalleryList reactRef={listRef} images={images} />
+          <ImageGalleryList ref={listRef} images={images} />
           {status === STATUS.fulfilled &&
             (!errorText ? (
               <LoadMoreButton onClick={incrementPage} />
