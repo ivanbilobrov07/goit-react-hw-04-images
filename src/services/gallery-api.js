@@ -37,6 +37,8 @@ export const fetchImages = async ({ page = 1, query, imagesPerPage = 12 }) => {
     throw new Error('No more images');
   });
 
+  console.log(response);
+
   if (chechResponse(response, imagesPerPage)) {
     return response;
   }

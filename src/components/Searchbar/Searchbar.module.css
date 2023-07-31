@@ -17,6 +17,20 @@
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
+.BackLink {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+
+  padding: 12px 20px;
+
+  text-decoration: none;
+  border-radius: 14px;
+  background-color: #fff;
+  color: black;
+}
+
 .SearchForm {
   display: flex;
   align-items: center;

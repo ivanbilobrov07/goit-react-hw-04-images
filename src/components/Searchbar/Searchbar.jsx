@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { FcSearch } from 'react-icons/fc';
 import Notiflix from 'notiflix';
 
@@ -19,6 +21,9 @@ export const Searchbar = ({ getImagesQuery }) => {
 
   return (
     <header className={css.Searchbar}>
+      <Link className={css.BackLink} to="/">
+        Back
+      </Link>
       <form className={css.SearchForm} onSubmit={onSubmit}>
         <button type="submit" className={css['SearchForm-button']}>
           <FcSearch size={20} />
