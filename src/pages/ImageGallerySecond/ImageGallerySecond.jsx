@@ -18,10 +18,14 @@ const ImageGallerySecond = () => {
 
   useEffect(() => {
     if (!query) return;
+
     async function fetchData() {
       try {
-        const newImages = (await fetchImages({ query, page, imagesPerPage }))
-          .data.hits;
+        const cleanQuery = query.slice(query.indexOf('/') + 1);
+        const newImages = (
+          await fetchImages({ query: cleanQuery, page, imagesPerPage })
+        ).data.hits;
+
         setImages(state => [...state, ...newImages]);
         checkAmountOfImages(newImages);
       } catch (e) {
@@ -40,11 +44,7 @@ const ImageGallerySecond = () => {
   };
 
   const changeQuery = queryValue => {
-    if (query === queryValue && page === 1) {
-      return;
-    }
-
-    setQuery(queryValue);
+    setQuery(`${Date.now()}/${queryValue}`);
     setPage(1);
     setImages([]);
   };
